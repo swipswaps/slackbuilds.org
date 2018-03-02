@@ -1,0 +1,25 @@
+From b4d42059de240c802c30f07b7ad7571b35a00e64 Mon Sep 17 00:00:00 2001
+From: Andrew Clemons <andrew.clemons@gmail.com>
+Date: Tue, 19 Sep 2017 20:08:28 +1200
+Subject: [PATCH] Extract BUILD correctly when TAG has digits
+
+Apply similar fixes to parsing code used by linter.
+---
+ libexec/functions.d/parsefunctions.sh | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/libexec/functions.d/parsefunctions.sh b/libexec/functions.d/parsefunctions.sh
+index 5390573..78ddf98 100755
+--- a/libexec/functions.d/parsefunctions.sh
++++ b/libexec/functions.d/parsefunctions.sh
+@@ -239,8 +239,8 @@ function parse_package_name
+   PN_PRGNAM=$(echo "$pkgnam" | rev | cut -f4- -d- | rev)
+   PN_VERSION=$(echo "$pkgnam" | rev | cut -f3 -d- | rev)
+   PN_ARCH=$(echo "$pkgnam" | rev | cut -f2 -d- | rev)
+-  PN_BUILD=$(echo "$pkgnam" | rev | cut -f1 -d- | rev | sed 's/[^0-9]*$//')
+-  PN_TAG=$(echo "$pkgnam" | rev | cut -f1 -d- | rev | sed 's/^[0-9]*//' | sed 's/\..*$//')
++  PN_BUILD=$(echo "$pkgnam" | rev | cut -f1 -d- | rev | sed 's/^\([[:digit:]][[:digit:]]*\).*$/\1/')
++  PN_TAG=$(echo "$pkgnam" | rev | cut -f1 -d- | rev | sed 's/^[[:digit:]][[:digit:]]*\(.*\)$/\1/' | rev | sed 's/^[^\.]*\.//' | rev)
+   PN_PKGTYPE=$(echo "$pkgnam" | rev | cut -f1 -d- | rev | sed 's/^[0-9]*//' | sed 's/^.*\.//')
+   return 0
+ }
