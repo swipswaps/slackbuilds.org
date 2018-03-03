@@ -1,0 +1,27 @@
+From 06d6fc2da3c2309604a10a38d96ef7ba787309f9 Mon Sep 17 00:00:00 2001
+From: Andrew Clemons <andrew.clemons@gmail.com>
+Date: Fri, 3 Nov 2017 16:04:09 +1300
+Subject: [PATCH] development/eclipse-java: Remove PRAGMA="unset_ARCH" -
+ Slackbuild has been updated
+
+---
+ SBo/default_hintfiles/14.2/development/eclipse-java/eclipse-java.hint   | 1 -
+ ponce/default_hintfiles/14.2/development/eclipse-java/eclipse-java.hint | 1 -
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 SBo/default_hintfiles/14.2/development/eclipse-java/eclipse-java.hint
+ delete mode 100644 ponce/default_hintfiles/14.2/development/eclipse-java/eclipse-java.hint
+
+diff --git a/SBo/default_hintfiles/14.2/development/eclipse-java/eclipse-java.hint b/SBo/default_hintfiles/14.2/development/eclipse-java/eclipse-java.hint
+deleted file mode 100644
+index 662b4f7..0000000
+--- a/SBo/default_hintfiles/14.2/development/eclipse-java/eclipse-java.hint
++++ /dev/null
+@@ -1 +0,0 @@
+-PRAGMA="unset_ARCH"
+diff --git a/ponce/default_hintfiles/14.2/development/eclipse-java/eclipse-java.hint b/ponce/default_hintfiles/14.2/development/eclipse-java/eclipse-java.hint
+deleted file mode 100644
+index 662b4f7..0000000
+--- a/ponce/default_hintfiles/14.2/development/eclipse-java/eclipse-java.hint
++++ /dev/null
+@@ -1 +0,0 @@
+-PRAGMA="unset_ARCH"

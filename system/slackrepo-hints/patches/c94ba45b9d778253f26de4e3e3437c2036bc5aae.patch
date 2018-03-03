@@ -1,0 +1,28 @@
+From c94ba45b9d778253f26de4e3e3437c2036bc5aae Mon Sep 17 00:00:00 2001
+From: Andrew Clemons <andrew.clemons@gmail.com>
+Date: Sat, 29 Sep 2018 10:48:55 +1200
+Subject: [PATCH] system/fwupd: Removed colord dependency.
+
+---
+ SBo/default_hintfiles/14.2/system/fwupd/fwupd.hint   | 4 ++--
+ ponce/default_hintfiles/14.2/system/fwupd/fwupd.hint | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/SBo/default_hintfiles/14.2/system/fwupd/fwupd.hint b/SBo/default_hintfiles/14.2/system/fwupd/fwupd.hint
+index d0e3b1b..4e7b90d 100644
+--- a/SBo/default_hintfiles/14.2/system/fwupd/fwupd.hint
++++ b/SBo/default_hintfiles/14.2/system/fwupd/fwupd.hint
+@@ -1,2 +1,2 @@
+-OPTIONS="ENABLE_COLORHUG=true ENABLE_DELL=true ENABLE_UEFI=true ENABLE_UEFI_LABELS=true"
+-ADDREQUIRES="colord fwupdate pygobject3-python3 python3-pillow py3cairo"
++OPTIONS="ENABLE_DELL=true ENABLE_UEFI=true ENABLE_UEFI_LABELS=true"
++ADDREQUIRES="fwupdate pygobject3-python3 python3-pillow py3cairo"
+diff --git a/ponce/default_hintfiles/14.2/system/fwupd/fwupd.hint b/ponce/default_hintfiles/14.2/system/fwupd/fwupd.hint
+index d0e3b1b..4e7b90d 100644
+--- a/ponce/default_hintfiles/14.2/system/fwupd/fwupd.hint
++++ b/ponce/default_hintfiles/14.2/system/fwupd/fwupd.hint
+@@ -1,2 +1,2 @@
+-OPTIONS="ENABLE_COLORHUG=true ENABLE_DELL=true ENABLE_UEFI=true ENABLE_UEFI_LABELS=true"
+-ADDREQUIRES="colord fwupdate pygobject3-python3 python3-pillow py3cairo"
++OPTIONS="ENABLE_DELL=true ENABLE_UEFI=true ENABLE_UEFI_LABELS=true"
++ADDREQUIRES="fwupdate pygobject3-python3 python3-pillow py3cairo"

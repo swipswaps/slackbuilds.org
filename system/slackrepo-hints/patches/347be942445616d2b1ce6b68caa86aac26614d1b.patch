@@ -1,0 +1,26 @@
+From 347be942445616d2b1ce6b68caa86aac26614d1b Mon Sep 17 00:00:00 2001
+From: Andrew Clemons <andrew.clemons@gmail.com>
+Date: Fri, 6 Oct 2017 07:48:22 +1300
+Subject: [PATCH] network/nagios: Update nagios user for new home directory
+
+---
+ SBo/default_hintfiles/14.2/network/nagios/nagios.hint   | 2 +-
+ ponce/default_hintfiles/14.2/network/nagios/nagios.hint | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/SBo/default_hintfiles/14.2/network/nagios/nagios.hint b/SBo/default_hintfiles/14.2/network/nagios/nagios.hint
+index 6fb9e3c..9852af6 100644
+--- a/SBo/default_hintfiles/14.2/network/nagios/nagios.hint
++++ b/SBo/default_hintfiles/14.2/network/nagios/nagios.hint
+@@ -1,2 +1,2 @@
+ GROUPADD="213:nagios"
+-USERADD="213:nagios:-d/usr/libexec/nagios"
++USERADD="213:nagios:-d/var/nagios"
+diff --git a/ponce/default_hintfiles/14.2/network/nagios/nagios.hint b/ponce/default_hintfiles/14.2/network/nagios/nagios.hint
+index 6fb9e3c..9852af6 100644
+--- a/ponce/default_hintfiles/14.2/network/nagios/nagios.hint
++++ b/ponce/default_hintfiles/14.2/network/nagios/nagios.hint
+@@ -1,2 +1,2 @@
+ GROUPADD="213:nagios"
+-USERADD="213:nagios:-d/usr/libexec/nagios"
++USERADD="213:nagios:-d/var/nagios"

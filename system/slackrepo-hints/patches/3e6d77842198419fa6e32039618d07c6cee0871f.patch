@@ -1,0 +1,26 @@
+From 3e6d77842198419fa6e32039618d07c6cee0871f Mon Sep 17 00:00:00 2001
+From: Andrew Clemons <andrew.clemons@gmail.com>
+Date: Mon, 25 Sep 2017 20:32:35 +1300
+Subject: [PATCH] development/sqlitebrowser: Restrict build to a single job
+
+---
+ SBo/default_hintfiles/14.2/development/sqlitebrowser/sqlitebrowser.hint  | 1 +
+ .../default_hintfiles/14.2/development/sqlitebrowser/sqlitebrowser.hint  | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 SBo/default_hintfiles/14.2/development/sqlitebrowser/sqlitebrowser.hint
+ create mode 100644 ponce/default_hintfiles/14.2/development/sqlitebrowser/sqlitebrowser.hint
+
+diff --git a/SBo/default_hintfiles/14.2/development/sqlitebrowser/sqlitebrowser.hint b/SBo/default_hintfiles/14.2/development/sqlitebrowser/sqlitebrowser.hint
+new file mode 100644
+index 0000000..a68d055
+--- /dev/null
++++ b/SBo/default_hintfiles/14.2/development/sqlitebrowser/sqlitebrowser.hint
+@@ -0,0 +1 @@
++NUMJOBS="-j1"
+diff --git a/ponce/default_hintfiles/14.2/development/sqlitebrowser/sqlitebrowser.hint b/ponce/default_hintfiles/14.2/development/sqlitebrowser/sqlitebrowser.hint
+new file mode 100644
+index 0000000..a68d055
+--- /dev/null
++++ b/ponce/default_hintfiles/14.2/development/sqlitebrowser/sqlitebrowser.hint
+@@ -0,0 +1 @@
++NUMJOBS="-j1"

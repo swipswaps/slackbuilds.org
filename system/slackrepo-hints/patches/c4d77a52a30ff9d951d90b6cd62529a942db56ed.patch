@@ -1,0 +1,26 @@
+From c4d77a52a30ff9d951d90b6cd62529a942db56ed Mon Sep 17 00:00:00 2001
+From: Andrew Clemons <andrew.clemons@gmail.com>
+Date: Mon, 25 Sep 2017 20:34:42 +1300
+Subject: [PATCH] system/csh: Restrict build to a single job
+
+---
+ SBo/default_hintfiles/14.2/system/csh/csh.hint   | 1 +
+ ponce/default_hintfiles/14.2/system/csh/csh.hint | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/SBo/default_hintfiles/14.2/system/csh/csh.hint b/SBo/default_hintfiles/14.2/system/csh/csh.hint
+index e00ed00..9062473 100644
+--- a/SBo/default_hintfiles/14.2/system/csh/csh.hint
++++ b/SBo/default_hintfiles/14.2/system/csh/csh.hint
+@@ -1,2 +1,3 @@
+ CLEANUP="s_reinstall tcsh"
+ PRAGMA="noexport_BUILD"
++NUMJOBS="-j1"
+diff --git a/ponce/default_hintfiles/14.2/system/csh/csh.hint b/ponce/default_hintfiles/14.2/system/csh/csh.hint
+index e00ed00..9062473 100644
+--- a/ponce/default_hintfiles/14.2/system/csh/csh.hint
++++ b/ponce/default_hintfiles/14.2/system/csh/csh.hint
+@@ -1,2 +1,3 @@
+ CLEANUP="s_reinstall tcsh"
+ PRAGMA="noexport_BUILD"
++NUMJOBS="-j1"

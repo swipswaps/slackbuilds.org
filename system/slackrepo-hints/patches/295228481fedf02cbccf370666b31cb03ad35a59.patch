@@ -1,0 +1,24 @@
+From 295228481fedf02cbccf370666b31cb03ad35a59 Mon Sep 17 00:00:00 2001
+From: Andrew Clemons <andrew.clemons@gmail.com>
+Date: Mon, 25 Sep 2017 20:41:53 +1300
+Subject: [PATCH] development/fsharp: Add need_net pragma :-(
+
+---
+ SBo/default_hintfiles/14.2/development/fsharp/fsharp.hint   | 2 +-
+ ponce/default_hintfiles/14.2/development/fsharp/fsharp.hint | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/SBo/default_hintfiles/14.2/development/fsharp/fsharp.hint b/SBo/default_hintfiles/14.2/development/fsharp/fsharp.hint
+index a9c340a..0f1b192 100644
+--- a/SBo/default_hintfiles/14.2/development/fsharp/fsharp.hint
++++ b/SBo/default_hintfiles/14.2/development/fsharp/fsharp.hint
+@@ -1 +1 @@
+-PRAGMA="nofakeroot"
++PRAGMA="nofakeroot need_net"
+diff --git a/ponce/default_hintfiles/14.2/development/fsharp/fsharp.hint b/ponce/default_hintfiles/14.2/development/fsharp/fsharp.hint
+index a9c340a..0f1b192 100644
+--- a/ponce/default_hintfiles/14.2/development/fsharp/fsharp.hint
++++ b/ponce/default_hintfiles/14.2/development/fsharp/fsharp.hint
+@@ -1 +1 @@
+-PRAGMA="nofakeroot"
++PRAGMA="nofakeroot need_net"

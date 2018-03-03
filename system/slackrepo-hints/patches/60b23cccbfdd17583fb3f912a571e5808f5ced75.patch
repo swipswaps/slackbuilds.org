@@ -1,0 +1,26 @@
+From 60b23cccbfdd17583fb3f912a571e5808f5ced75 Mon Sep 17 00:00:00 2001
+From: Andrew Clemons <andrew.clemons@gmail.com>
+Date: Thu, 8 Feb 2018 09:11:22 +1300
+Subject: [PATCH] academic/finchtv - Removed (source now hosted on sourceforge)
+
+---
+ SBo/default_hintfiles/14.2/academic/finchtv/finchtv.hint   | 1 -
+ ponce/default_hintfiles/14.2/academic/finchtv/finchtv.hint | 1 -
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 SBo/default_hintfiles/14.2/academic/finchtv/finchtv.hint
+ delete mode 100644 ponce/default_hintfiles/14.2/academic/finchtv/finchtv.hint
+
+diff --git a/SBo/default_hintfiles/14.2/academic/finchtv/finchtv.hint b/SBo/default_hintfiles/14.2/academic/finchtv/finchtv.hint
+deleted file mode 100644
+index 76a97c7..0000000
+--- a/SBo/default_hintfiles/14.2/academic/finchtv/finchtv.hint
++++ /dev/null
+@@ -1 +0,0 @@
+-DOWNLOAD="no"
+diff --git a/ponce/default_hintfiles/14.2/academic/finchtv/finchtv.hint b/ponce/default_hintfiles/14.2/academic/finchtv/finchtv.hint
+deleted file mode 100644
+index 76a97c7..0000000
+--- a/ponce/default_hintfiles/14.2/academic/finchtv/finchtv.hint
++++ /dev/null
+@@ -1 +0,0 @@
+-DOWNLOAD="no"

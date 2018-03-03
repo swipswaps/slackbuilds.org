@@ -1,0 +1,27 @@
+From 9fdf432eef79c6e22a5de39d5260944b5b9d905d Mon Sep 17 00:00:00 2001
+From: Andrew Clemons <andrew.clemons@gmail.com>
+Date: Fri, 3 Nov 2017 16:04:24 +1300
+Subject: [PATCH] development/eclipse-jee: Remove PRAGMA="unset_ARCH" -
+ Slackbuild has been updated
+
+---
+ SBo/default_hintfiles/14.2/development/eclipse-jee/eclipse-jee.hint   | 1 -
+ ponce/default_hintfiles/14.2/development/eclipse-jee/eclipse-jee.hint | 1 -
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 SBo/default_hintfiles/14.2/development/eclipse-jee/eclipse-jee.hint
+ delete mode 100644 ponce/default_hintfiles/14.2/development/eclipse-jee/eclipse-jee.hint
+
+diff --git a/SBo/default_hintfiles/14.2/development/eclipse-jee/eclipse-jee.hint b/SBo/default_hintfiles/14.2/development/eclipse-jee/eclipse-jee.hint
+deleted file mode 100644
+index 662b4f7..0000000
+--- a/SBo/default_hintfiles/14.2/development/eclipse-jee/eclipse-jee.hint
++++ /dev/null
+@@ -1 +0,0 @@
+-PRAGMA="unset_ARCH"
+diff --git a/ponce/default_hintfiles/14.2/development/eclipse-jee/eclipse-jee.hint b/ponce/default_hintfiles/14.2/development/eclipse-jee/eclipse-jee.hint
+deleted file mode 100644
+index 662b4f7..0000000
+--- a/ponce/default_hintfiles/14.2/development/eclipse-jee/eclipse-jee.hint
++++ /dev/null
+@@ -1 +0,0 @@
+-PRAGMA="unset_ARCH"
