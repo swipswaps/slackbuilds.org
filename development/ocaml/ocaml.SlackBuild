@@ -55,6 +55,12 @@ else
   LIBDIRSUFFIX=""
 fi
 
+CONFIGURE_HOST="$ARCH-slackware-linux"
+
+if [ "$ARCH" = "arm" ] ; then
+  CONFIGURE_HOST="arm-slackware-linux-gnueabihf"
+fi
+
 set -e
 
 rm -rf $PKG
@@ -75,7 +81,7 @@ patch < $CWD/configure.patch
 CFLAGS="$SLKCFLAGS" ./configure \
   --prefix /usr \
   --libdir /usr/lib${LIBDIRSUFFIX}/ocaml \
-  --host $ARCH-slackware-linux
+  --host "$CONFIGURE_HOST"
 
 make -j1 world.opt
 make -j1 install \
