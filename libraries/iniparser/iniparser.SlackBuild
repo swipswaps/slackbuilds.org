@@ -52,7 +52,7 @@ elif [ "$ARCH" = "x86_64" ]; then
   LDSHFLAGS="-shared -Wl,-Bsymbolic  -Wl,-rpath -Wl,/usr/lib64 -Wl,-rpath,/usr/lib64"
   LDFLAGS="-Wl,-rpath -Wl,/usr/lib64 -Wl,-rpath,/usr/lib64"
 else
-  SLKCFLAGS="-O2"
+  SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
   LIBDIRSUFFIX=""
 fi
 

@@ -71,7 +71,7 @@ cat <<EOF
 EOF
   read -t 10 junk
 else
-  SLKCFLAGS="-O2"
+  SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
   LIBDIRSUFFIX=""
 cat <<EOF
   WARNING: $PRGNAM is untested on $ARCH and probably won't work. Press ^C

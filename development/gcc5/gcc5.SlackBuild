@@ -96,7 +96,7 @@ elif [ "$ARCH" = "i686" ]; then
   LIBDIRSUFFIX=""
   LIB_ARCH=i386
 elif [ "$ARCH" = "s390" ]; then
-  SLKCFLAGS="-O2"
+  SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
   SLKLDFLAGS=""
   LIBDIRSUFFIX=""
   LIB_ARCH=s390
@@ -111,7 +111,7 @@ elif [ "$ARCH" = "armv7hl" ]; then
   LIBDIRSUFFIX=""
   LIB_ARCH=armv7hl
 else
-  SLKCFLAGS="-O2"
+  SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
   SLKLDFLAGS=""
   LIBDIRSUFFIX=""
   LIB_ARCH=$ARCH

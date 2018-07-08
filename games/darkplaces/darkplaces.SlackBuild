@@ -67,7 +67,7 @@ elif [ "$ARCH" = "x86_64" ]; then
   BINARCH="x86_64"
 else
   # might not work at all, but we could try :)
-  SLKCFLAGS="-O2"
+  SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
   BINARCH=$ARCH
   SOURCE="YES"
 fi

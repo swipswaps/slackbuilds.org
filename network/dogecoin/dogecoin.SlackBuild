@@ -52,7 +52,7 @@ case "$ARCH" in
   armv6hl) SLKCFLAGS="-O2 -march=armv6 -mfpu=vfp -mfloat-abi=hard"
            SLKLDFLAGS=""; LIBDIRSUFFIX=""
            ;;
-  *)       SLKCFLAGS="-O2"
+  *)       SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
            SLKLDFLAGS=""; LIBDIRSUFFIX=""
            ;;
 esac

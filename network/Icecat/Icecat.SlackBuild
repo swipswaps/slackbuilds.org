@@ -62,7 +62,7 @@ elif [ "$ARCH" = "arm" ]; then
   LIBDIRSUFFIX=""
   OPTIMIZE=" --enable-optimize=-O1 "
 else
-  SLKCFLAGS="-O2"
+  SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
   LIBDIRSUFFIX=""
   OPTIMIZE=" --enable-optimize=-O1 "
 fi

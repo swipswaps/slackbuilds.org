@@ -57,7 +57,7 @@ fi
 
 # These should work for anything not specified below
 BUILD_ARCH=$ARCH"-slackware-linux"
-SLKCFLAGS="-O2"
+SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
 
 case "$ARCH" in
 	arm)

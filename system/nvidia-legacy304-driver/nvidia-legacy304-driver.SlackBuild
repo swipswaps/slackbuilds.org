@@ -62,7 +62,7 @@ elif [ "$ARCH" = "x86_64" ]; then
 # Set 32-bit compatibility flag default
   COMPAT32=${COMPAT32:-no}
 else
-  SLKCFLAGS="-O2"
+  SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
   LIBDIRSUFFIX=""
 fi
 

@@ -64,7 +64,7 @@ elif [ "$ARCH" = "armv7hl" ]; then
   LIBDIRSUFFIX=""
   LIB_ARCH=armv7hl
 else
-  SLKCFLAGS="-O2"
+  SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
   LIBDIRSUFFIX=""
   LIB_ARCH=$ARCH
 fi
