@@ -1,0 +1,80 @@
+diff --git a/src/faketime.c b/src/faketime.c
+index 138ebbd..037d749 100644
+--- a/src/faketime.c
++++ b/src/faketime.c
+@@ -209,7 +209,7 @@ int main (int argc, char **argv)
+     int shm_fd;
+     sem_t *sem;
+     struct ft_shared_s *ft_shared;
+-    char shared_objs[PATH_BUFSIZE];
++    char shared_objs[PATH_BUFSIZE * 2 + 1];
+ 
+     /*
+      * Casting of getpid() return value to long needed to make GCC on SmartOS
+@@ -286,7 +286,7 @@ int main (int argc, char **argv)
+       exit(EXIT_FAILURE);
+     }
+ 
+-    snprintf(shared_objs, PATH_BUFSIZE, "%s %s", sem_name, shm_name);
++    snprintf(shared_objs, sizeof(shared_objs), "%s %s", sem_name, shm_name);
+     setenv("FAKETIME_SHARED", shared_objs, true);
+     sem_close(sem);
+   }
+diff --git a/src/libfaketime.c b/src/libfaketime.c
+index 26728a2..5823701 100644
+--- a/src/libfaketime.c
++++ b/src/libfaketime.c
+@@ -1881,7 +1881,8 @@ static void ftpl_init(void)
+   if ((tmp_env = getenv("FAKETIME_SPAWN_TARGET")) != NULL)
+   {
+     spawnsupport = true;
+-    (void) strncpy(ft_spawn_target, getenv("FAKETIME_SPAWN_TARGET"), 1024);
++    (void) strncpy(ft_spawn_target, getenv("FAKETIME_SPAWN_TARGET"), sizeof(ft_spawn_target) - 1);
++    ft_spawn_target[sizeof(ft_spawn_target) - 1] = 0;
+     if ((tmp_env = getenv("FAKETIME_SPAWN_SECONDS")) != NULL)
+     {
+       ft_spawn_secs = atol(tmp_env);
+@@ -1942,7 +1943,8 @@ static void ftpl_init(void)
+   }
+   else
+   {
+-    strncpy(user_faked_time_fmt, tmp_env, BUFSIZ);
++    strncpy(user_faked_time_fmt, tmp_env, BUFSIZ - 1);
++    user_faked_time_fmt[BUFSIZ - 1] = 0;
+   }
+ 
+   if (shared_sem != 0)
+@@ -2013,6 +2015,14 @@ static void remove_trailing_eols(char *line)
+  *      =======================================================================
+  */
+ 
++#ifdef PTHREAD_SINGLETHREADED_TIME
++static void pthread_cleanup_mutex_lock(void *data)
++{
++  pthread_mutex_t *mutex = data;
++  pthread_mutex_unlock(mutex);
++}
++#endif
++
+ int fake_clock_gettime(clockid_t clk_id, struct timespec *tp)
+ {
+   /* variables used for caching, introduced in version 0.6 */
+@@ -2036,7 +2046,7 @@ int fake_clock_gettime(clockid_t clk_id, struct timespec *tp)
+ #ifdef PTHREAD_SINGLETHREADED_TIME
+   static pthread_mutex_t time_mutex=PTHREAD_MUTEX_INITIALIZER;
+   pthread_mutex_lock(&time_mutex);
+-  pthread_cleanup_push((void (*)(void *))pthread_mutex_unlock, (void *)&time_mutex);
++  pthread_cleanup_push(pthread_cleanup_mutex_lock, &time_mutex);
+ #endif
+ 
+   if ((limited_faking &&
+@@ -2131,7 +2141,8 @@ int fake_clock_gettime(clockid_t clk_id, struct timespec *tp)
+ 
+     if (NULL != (tmp_env = getenv("FAKETIME")))
+     {
+-      strncpy(user_faked_time, tmp_env, BUFFERLEN);
++      strncpy(user_faked_time, tmp_env, BUFFERLEN - 1);
++      user_faked_time[BUFFERLEN - 1] = 0;
+     }
+     else
+     {
