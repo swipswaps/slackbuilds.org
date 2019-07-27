@@ -43,7 +43,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-if [ "$ARCH" = "i586" ]; then
+if case "$ARCH" in i?86) true ;; *) false ;; esac ; then
   LIBDIRSUFFIX=""
   GOARCH="386"
 elif [ "$ARCH" = "x86_64" ]; then
