@@ -7,6 +7,6 @@ MD5SUM="aae873ee270d6c7b21a6ff3bec3f08ad \
         f2cd079095fd6b41b0762b98133b7752"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
-REQUIRES="apache-ant eclipse-java Sphinx"
+REQUIRES="apache-ant eclipse-java python3-attrs Sphinx"
 MAINTAINER="Andrew Clemons"
 EMAIL="andrew.clemons@gmail.com"
