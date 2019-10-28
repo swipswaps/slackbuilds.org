@@ -13,7 +13,7 @@ libfprint: for application developers to add support for consumer fingerprint
 libfprint: readers to their software.
 libfprint:
 libfprint:
-libfprint: Homepage: http://reactivated.net/fprint/wiki/Libfprint
+libfprint: Homepage: https://fprint.freedesktop.org/
 libfprint:
 libfprint:
 libfprint:
