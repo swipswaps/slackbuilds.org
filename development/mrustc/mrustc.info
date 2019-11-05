@@ -1,10 +1,10 @@
 PRGNAM="mrustc"
-VERSION="0.8.1"
+VERSION="0.9"
 HOMEPAGE="https://github.com/thepowersgang/mrustc"
-DOWNLOAD="https://github.com/thepowersgang/mrustc/archive/v0.8.1/mrustc-0.8.1.tar.gz \
-          https://static.rust-lang.org/dist/rustc-1.19.0-src.tar.xz"
-MD5SUM="4ad333bb7d09e07ab1ce76e1690fa7a9 \
-        e9af5bb321c0cad44ea0e3e2c644ab2f"
+DOWNLOAD="https://github.com/thepowersgang/mrustc/archive/v0.9/mrustc-0.9.tar.gz \
+          https://static.rust-lang.org/dist/rustc-1.29.0-src.tar.xz"
+MD5SUM="4195695805ddfaf7cb2f4088760b26d0 \
+        23ab6ab89a5bccc731c3b7f059436522"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
 REQUIRES=""
