@@ -29,8 +29,8 @@
 PRGNAM=qt5-webkit
 SRCNAM=qtwebkit
 VERSION=${VERSION:-5.212.0_alpha4}
-SRCDIR=${SRCNAM}-$(echo $VERSION | sed -r "s,\.[[:digit:]]+_.*,,")
-SRCVERSION=$(echo v$VERSION | tr -s '_' '-')
+SRCVERSION=$(echo $VERSION | tr -s '_' '-')
+SRCDIR=$SRCNAM-$SRCVERSION
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
